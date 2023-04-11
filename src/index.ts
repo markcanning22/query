@@ -92,7 +92,7 @@ app.post('/events', (req: Request, res: Response): Response | undefined => {
 app.listen(4002, async (): Promise<void> => {
     console.log('Listening on 4002');
 
-    const res: AxiosResponse = await axios.get('http://event-bus-clusterip-srv:4005/events');
+    const res: AxiosResponse = await axios.get('http://event-bus-srv:4005/events');
 
     let event: Event;
     for (event of res.data) {
